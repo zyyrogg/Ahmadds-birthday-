@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ahmad 🎂</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  background: #111;
+  color: white;
+}
+
+.card {
+  width: min(92vw, 480px);
+  padding: 42px 24px;
+  border-radius: 28px;
+  text-align: center;
+  background: #1b1b1b;
+  box-shadow: 0 20px 70px rgba(0,0,0,.45);
+}
+
+h1 {
+  margin: 0 0 30px;
+  font-size: clamp(30px, 7vw, 46px);
+  line-height: 1.15;
+}
+
+p {
+  font-size: 18px;
+  opacity: .7;
+  margin-bottom: 30px;
+}
+
+button {
+  border: 0;
+  border-radius: 14px;
+  padding: 15px 32px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#wish {
+  background: white;
+  color: #111;
+}
+
+/* POPUP */
+
+#popupOverlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(0,0,0,.8);
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+}
+
+.popup {
+  width: min(94vw, 520px);
+  border-radius: 24px;
+  background: white;
+  color: #111;
+  text-align: center;
+  padding: 30px 20px;
+  box-shadow: 0 25px 90px rgba(0,0,0,.65);
+  animation: pop .3s ease;
+}
+
+.birthday {
+  font-size: 90px;
+  margin-bottom: 15px;
+}
+
+.popup h2 {
+  margin: 0;
+  font-size: clamp(30px, 8vw, 46px);
+}
+
+.popup p {
+  font-size: 18px;
+  opacity: .7;
+  line-height: 1.5;
+}
+
+.close {
+  margin-top: 10px;
+  background: #111;
+  color: white;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(.6);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <h1>Hey Ahmad 👀🎂</h1>
+
+  <p>
+    I have a very important question for you...
+    Are you ready for your birthday wish? 😭
+  </p>
+
+  <button id="wish">
+    YES 😭🎉
+  </button>
+
+</div>
+
+
+<!-- BIRTHDAY POPUP -->
+
+<div id="popupOverlay">
+
+  <div class="popup">
+
+    <div class="birthday">
+      🎂🎉🥳
+    </div>
+
+    <h2>HAPPY BIRTHDAY AHMAD! 🎂</h2>
+
+    <p>
+      May your day be filled with happiness, laughter,
+      good memories and lots of cake. ❤️
+      <br><br>
+      Stay happy, stay blessed and keep smiling! ✨
+    </p>
+
+    <button class="close" id="closeBtn">
+      Thank You 😭❤️
+    </button>
+
+  </div>
+
+</div>
+
+
+<script>
+
+const wishBtn = document.getElementById("wish");
+const popup = document.getElementById("popupOverlay");
+const closeBtn = document.getElementById("closeBtn");
+
+wishBtn.addEventListener("click", function() {
+  popup.style.display = "flex";
+});
+
+closeBtn.addEventListener("click", function() {
+  popup.style.display = "none";
+});
+
+</script>
+
+</body>
+</html>
